@@ -70,7 +70,7 @@ async def handle_afk_incomming(message: Message) -> None:
     if user_id in USERS:
         if not (USERS[user_id][0] + USERS[user_id][1]) % randint(2, 4):
             if REASON:
-                out_str = (f"AING **SIBUK NGENTOT 😡**.\nAlasan: <code>{REASON}</code>\n"
+                out_str = (f"AING **SIBUK 😡**.\nAlasan: <code>{REASON}</code>\n"
                            f"Terakhir Dilihat: `{afk_time} ago`")
             else:
                 out_str = choice(AFK_REASONS)
@@ -81,7 +81,7 @@ async def handle_afk_incomming(message: Message) -> None:
             USERS[user_id][1] += 1
     else:
         if REASON:
-            out_str = (f"AING **SIBUK NGENTOT 😡** SABAR YA ASU.\nAlasan: <code>{REASON}</code>\n"
+            out_str = (f"AING **SIBUK 😡** SABAR YA ASU.\nAlasan: <code>{REASON}</code>\n"
                        f"Terakhir Dilihat: `{afk_time} ago`")
         else:
             out_str = choice(AFK_REASONS)
@@ -151,9 +151,9 @@ async def handle_afk_outgoing(message: Message) -> None:
 
 
 AFK_REASONS = (
-    "Lagi Ngentot ASU!",
+    "LAGI SIBUK DIAM DULU!",
     "BACOT BENER ASU DEH GATAU ORANG SIBUK,.: \
-`NYARI JANDAAA ASU`",
+`NYARI JANDAAA `",
     "You missed me, next time aim better.",
     "I'll be back in a few minutes and if I'm not...,\nwait longer.",
     "I'm not here right now, so I'm probably somewhere else.",
