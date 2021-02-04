@@ -54,14 +54,14 @@ async def gmute_user(msg: Message):
     found = await GMUTE_USER_BASE.find_one({'user_id': user_id})
     if found:
         await msg.edit(
-            "**#Already_GMuted**\n\n`This User Already Exists in My GMute List.`\n"
+            "**#Already_GMuted**\n\n`DIA UDAH ADA DALAM DAFTAR GMUTE BEGO.`\n"
             f"**Reason For GMute:** `{found['reason']}`")
         return
     await asyncio.gather(
         GMUTE_USER_BASE.insert_one(
             {'firstname': firstname, 'user_id': user_id, 'reason': reason}),
         msg.edit(
-            r"\\**#GMuted_User**//"
+            r"\\**#JAMET BERHASIL DI GMUTE**//"
             f"\n\n**First Name:** [{firstname}](tg://user?id={user_id})\n"
             f"**User ID:** `{user_id}`\n**Reason:** `{reason}`"))
     chats = [msg.chat] if msg.client.is_bot else await msg.client.get_common_chats(user_id)
@@ -90,7 +90,7 @@ async def gmute_user(msg: Message):
     allow_channels=False, allow_bots=False)
 async def ungmute_user(msg: Message):
     """ unmute a user globally """
-    await msg.edit("`UnGMuting this User...`")
+    await msg.edit("`KASI AMPUN KASIAN...`")
     user_id, _ = msg.extract_user_and_text
     if not user_id:
         await msg.err("user-id not found")
@@ -100,12 +100,12 @@ async def ungmute_user(msg: Message):
     user_id = get_mem['id']
     found = await GMUTE_USER_BASE.find_one({'user_id': user_id})
     if not found:
-        await msg.err("User Not Found in My GMute List")
+        await msg.err("DIA GAADA DALAM DAFTAR GMUTE ASU")
         return
     await asyncio.gather(
         GMUTE_USER_BASE.delete_one({'firstname': firstname, 'user_id': user_id}),
         msg.edit(
-            r"\\**#UnGMuted_User**//"
+            r"\\**#MAKANYA JANGAN SO KERAS KONTOL!!!**//"
             f"\n\n**First Name:** [{firstname}](tg://user?id={user_id})\n"
             f"**User ID:** `{user_id}`"))
     chats = [msg.chat] if msg.client.is_bot else await msg.client.get_common_chats(user_id)
