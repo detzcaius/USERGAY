@@ -27,7 +27,7 @@ LOG = userge.getLogger(__name__)
     allow_channels=False, allow_bots=False)
 async def gmute_user(msg: Message):
     """ Mute a user globally """
-    await msg.edit("`Globally Muting this User...`")
+    await msg.edit("`GMUTE DULU YA JAMET...`")
     user_id, reason = msg.extract_user_and_text
     if not user_id:
         await msg.edit(
