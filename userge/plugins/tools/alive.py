@@ -68,15 +68,15 @@ def _get_alive_text_and_markup(message: Message) -> Tuple[str, Optional[InlineKe
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n
 **⌚ uptime** : `{userge.uptime}`
 **💻 version** : `{get_version()}`
-**🐨 Mode** : `{_get_mode().upper()}`
+**🐼 Mode** : `{_get_mode().upper()}`
 \n╭▻►▻►▻►▻►▻►◄◅◄◅◄◅◄◅╮
-[• **👥 Sudo**: `{_parse_arg(Config.SUDO_ENABLED)}`✔
-[• **🗳️ Pm-Guard**: `{_parse_arg(not Config.ALLOW_ALL_PMS)}`✔
-[• **🚫 Anti-Spam**: `{_parse_arg(Config.ANTISPAM_SENTRY)}`✔"""
+[• **👥 Sudo**: `{_parse_arg(Config.SUDO_ENABLED)}`💎
+[• **🗳️ Pm-Guard**: `{_parse_arg(not Config.ALLOW_ALL_PMS)}`💎
+[• **🚫 Anti-Spam**: `{_parse_arg(Config.ANTISPAM_SENTRY)}`💎"""
     if Config.HEROKU_APP:
-        output += f"\n[• **🧿 Dyno-saver**: `{_parse_arg(Config.RUN_DYNO_SAVER)}`⚡"
+        output += f"\n[• **🧿 Dyno-saver**: `{_parse_arg(Config.RUN_DYNO_SAVER)}`💎"
     output += f"""
-[• **🚀 Unofficial**: `{_parse_arg(Config.LOAD_UNOFFICIAL_PLUGINS)}`✔
+[• **🚀 Unofficial**: `{_parse_arg(Config.LOAD_UNOFFICIAL_PLUGINS)}`💎
 ╰▻►▻►▻►▻►▻►◄◅◄◅◄◅◄◅╯\n
   🐍**__Python__**: `{versions.__python_version__}`
   💻**__Pyrogram__**: `{versions.__pyro_version__}`
