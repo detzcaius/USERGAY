@@ -81,7 +81,7 @@ async def handle_afk_incomming(message: Message) -> None:
             USERS[user_id][1] += 1
     else:
         if REASON:
-            out_str = (f"AING **SIBUK 😡** SABAR YA ASU.\nAlasan: <code>{REASON}</code>\n"
+            out_str = (f"AING **SIBUK 😡** SABAR YA!!.\nAlasan: <code>{REASON}</code>\n"
                        f"Terakhir Dilihat: `{afk_time} ago`")
         else:
             out_str = choice(AFK_REASONS)
